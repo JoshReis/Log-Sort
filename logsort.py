@@ -40,13 +40,13 @@ def main():
 
     """Program execution starts here."""
 
+    print(__doc__)
+    log = input(str('Log file: '))
+    word = input(str('Word: '))
+    split = input(str('Word Split: '))
+    con_log = (file_to_list(log, split))
+    write_by_phrase(con_log, word)
+    print('All data has been outputted to sorted_log.txt')
 
-print(__doc__)
-log = input(str('Log file: '))
-word = input(str('Word: '))
-split = input(str('Word Split: '))
-con_log = (file_to_list(log, split))
-write_by_phrase(con_log, word)
-print('All data has been outputted to sorted_log.txt')
 
 main()

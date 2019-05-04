@@ -1,15 +1,17 @@
 """
 This utility allows you to create a new .txt file from a log file containing
 ONLY the lines which contain the key phrase defined by the user.
-The data from the log file is read, split, and stored in a list, later to be
-passed to a linear search function which searches for the key phrase in ALL
-lines stored in the list and if the condition is met, the line is written back
-to the log file in the initial format which is was read as.
+Each line from the log file is read, split, and stored in a list,
+passed to a linear search function which searches for the key phrase in the 
+list and if the condition is met, the line is written back to the log file 
+in the initial format which is was read as.
+
 NOTES:
 - Files created and read from same directory as logsort.py
 - Word split is the character in your log which separates each word. For
-  example if my line is "Hello World" a space would be my word split.
-Author: J. Reisbord
+  example if my line is "Hello World" a space (" ") would be my word split.
+  
+Author: Joshua Reisbord
 Date: Feb 2, 2019.
 """
 import sys

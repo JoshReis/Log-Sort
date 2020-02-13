@@ -34,7 +34,7 @@ def file_to_list(file, split, phrase):
             # Split elements at ',' and strip trailing new line
             if phrase in data_list:  # Checks for key phrase
                 count += 1
-                sys.stdout.write("\r" + "Found the phrase: '" + phrase + "' " + str(count) + " times.")
+                sys.stdout.write(f"\rFound the phrase: '{phrase}' {str(count)} times.")
                 sys.stdout.flush()
                 outfile.write(" ".join(data_list) + '\n')  # Writes to file.
 
@@ -46,6 +46,7 @@ def main():
     """Program execution starts here."""
 
     print(__doc__)
+    LOG_FILE = "sorted_log.txt"
 
     while True:
 
@@ -55,13 +56,11 @@ def main():
             word = input(str('Search phrase: '))
             split = input(str('Word split: '))
             file_to_list(log, split, word)  # Turns log too list of lists
-            print('\nAll data has been outputted to sorted_log.txt')
+            print(f'\nAll data has been outputted to {LOG_FILE}.')
 
         except FileNotFoundError:
 
-            print('\nERROR: Log file not found, try again!')
+            print(f'\nERROR: File '{log}' not found!')
             pass
 
-
-if __name__ == '__main__':
-    main()
+main()
